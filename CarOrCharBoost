@@ -9,7 +9,7 @@ user.InputBegan:Connect(function(key, type)
         local character = player.Character
         local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
         if character and humanoidRootPart then
-            character["HumanoidRootPart"].Velocity += character["HumanoidRootPart"].CFrame.LookVector * Vector3.new(250,0,250)
+            character["HumanoidRootPart"].Velocity += character["HumanoidRootPart"].CFrame.LookVector * Vector3.new(50,0,50)
         end
     end
 end)
