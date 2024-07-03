@@ -1,37 +1,561 @@
--- universal car script but needs gui to operate. Perhaps add Up and Down as an option aswell. 
+-- If you're seeing this, please don't change anything I worked hard on this script. Thank you.
 
-local player = game.Players.LocalPlayer
-local user = game:GetService("UserInputService")
+local UniversalCarAndCharacterSpeed = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local ToggleOnOff = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local ForwardForcer = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local ForwardForceText = Instance.new("TextLabel")
+local UpForcer = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local UpForceText = Instance.new("TextLabel")
+local DownForcer = Instance.new("TextBox")
+local UICorner_6 = Instance.new("UICorner")
+local DownForceText = Instance.new("TextLabel")
+local ActivateHotkeyText = Instance.new("TextLabel")
+local ActivateHotkey = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local SlowdownHotkey = Instance.new("TextBox")
+local UICorner_8 = Instance.new("UICorner")
+local SlowdownHotkeyText = Instance.new("TextLabel")
+local AnchorHotkeyText = Instance.new("TextLabel")
+local AnchorHotkey = Instance.new("TextBox")
+local UICorner_9 = Instance.new("UICorner")
+local ToggleGUIHotkey = Instance.new("TextLabel")
 
-user.InputBegan:Connect(function(key, type)
-    if type then return end
-    if key.KeyCode == Enum.KeyCode.R then
-        local character = player.Character
-        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-        if character and humanoidRootPart then
-            character["HumanoidRootPart"].Velocity += character["HumanoidRootPart"].CFrame.LookVector * Vector3.new(50,0,50)
-        end
-    end
-end)
+--Properties:
 
-user.InputBegan:Connect(function(key, type)
-    if type then return end
-    if key.KeyCode == Enum.KeyCode.Q then
-        local character = player.Character
-        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-        if character and humanoidRootPart then
-            character["HumanoidRootPart"].Velocity -= character["HumanoidRootPart"].Velocity
-        end
-    end
-end)
+UniversalCarAndCharacterSpeed.Name = "UniversalCarAndCharacterSpeed"
+UniversalCarAndCharacterSpeed.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+UniversalCarAndCharacterSpeed.ResetOnSpawn = false
+UniversalCarAndCharacterSpeed.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-user.InputBegan:Connect(function(key, type)
-    if type then return end
-    if key.KeyCode == Enum.KeyCode.Three then
-        local character = player.Character
-        local head = character:FindFirstChild("Head")
-        if character and head then
-            character["Head"].Anchored = not character["Head"].Anchored
-        end
-    end
-end)
+Frame.Parent = UniversalCarAndCharacterSpeed
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.500000119, 0, 0.359701484, 0)
+Frame.Size = UDim2.new(0.337334633, 0, 0.590298533, 0)
+Frame.Active = true
+Frame.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0350000001, 0, 0.0199999996, 0)
+Title.Size = UDim2.new(0.600000024, 0, 0.100000001, 0)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "[Universal Velocity] look4.god"
+Title.TextColor3 = Color3.fromRGB(0, 0, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner.Parent = Frame
+
+ToggleOnOff.Name = "ToggleOnOff"
+ToggleOnOff.Parent = Frame
+ToggleOnOff.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+ToggleOnOff.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToggleOnOff.BorderSizePixel = 0
+ToggleOnOff.Position = UDim2.new(0.64200002, 0, 0.0199999996, 0)
+ToggleOnOff.Size = UDim2.new(0.317999989, 0, 0.119999997, 0)
+ToggleOnOff.Font = Enum.Font.SourceSans
+ToggleOnOff.Text = "Off"
+ToggleOnOff.TextColor3 = Color3.fromRGB(255, 0, 0)
+ToggleOnOff.TextSize = 14.000
+
+UICorner_2.Parent = ToggleOnOff
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.035329625, 0, 0.173506841, 0)
+ScrollingFrame.Size = UDim2.new(0.925000012, 0, 0.800000012, 0)
+
+ForwardForcer.Name = "ForwardForcer"
+ForwardForcer.Parent = ScrollingFrame
+ForwardForcer.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+ForwardForcer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ForwardForcer.BorderSizePixel = 0
+ForwardForcer.Position = UDim2.new(0.529999971, 0, 0.0299999993, 0)
+ForwardForcer.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+ForwardForcer.Font = Enum.Font.SourceSans
+ForwardForcer.Text = ""
+ForwardForcer.TextColor3 = Color3.fromRGB(0, 255, 0)
+ForwardForcer.TextScaled = true
+ForwardForcer.TextSize = 14.000
+ForwardForcer.TextWrapped = true
+
+UICorner_3.Parent = ForwardForcer
+
+UICorner_4.Parent = ScrollingFrame
+
+ForwardForceText.Name = "ForwardForceText"
+ForwardForceText.Parent = ScrollingFrame
+ForwardForceText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ForwardForceText.BackgroundTransparency = 1.000
+ForwardForceText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ForwardForceText.BorderSizePixel = 0
+ForwardForceText.Position = UDim2.new(0.0480000004, 0, 0.0299999993, 0)
+ForwardForceText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+ForwardForceText.Font = Enum.Font.SourceSans
+ForwardForceText.Text = "Forward Force"
+ForwardForceText.TextColor3 = Color3.fromRGB(158, 158, 158)
+ForwardForceText.TextScaled = true
+ForwardForceText.TextSize = 14.000
+ForwardForceText.TextWrapped = true
+ForwardForceText.TextXAlignment = Enum.TextXAlignment.Left
+
+UpForcer.Name = "UpForcer"
+UpForcer.Parent = ScrollingFrame
+UpForcer.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+UpForcer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UpForcer.BorderSizePixel = 0
+UpForcer.Position = UDim2.new(0.529999971, 0, 0.119999997, 0)
+UpForcer.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+UpForcer.Font = Enum.Font.SourceSans
+UpForcer.Text = ""
+UpForcer.TextColor3 = Color3.fromRGB(0, 255, 0)
+UpForcer.TextScaled = true
+UpForcer.TextSize = 14.000
+UpForcer.TextWrapped = true
+
+UICorner_5.Parent = UpForcer
+
+UpForceText.Name = "UpForceText"
+UpForceText.Parent = ScrollingFrame
+UpForceText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+UpForceText.BackgroundTransparency = 1.000
+UpForceText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UpForceText.BorderSizePixel = 0
+UpForceText.Position = UDim2.new(0.0480000004, 0, 0.119999997, 0)
+UpForceText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+UpForceText.Font = Enum.Font.SourceSans
+UpForceText.Text = "Up force"
+UpForceText.TextColor3 = Color3.fromRGB(158, 158, 158)
+UpForceText.TextScaled = true
+UpForceText.TextSize = 14.000
+UpForceText.TextWrapped = true
+UpForceText.TextXAlignment = Enum.TextXAlignment.Left
+
+DownForcer.Name = "DownForcer"
+DownForcer.Parent = ScrollingFrame
+DownForcer.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+DownForcer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DownForcer.BorderSizePixel = 0
+DownForcer.Position = UDim2.new(0.529999971, 0, 0.209999993, 0)
+DownForcer.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+DownForcer.Font = Enum.Font.SourceSans
+DownForcer.Text = ""
+DownForcer.TextColor3 = Color3.fromRGB(0, 255, 0)
+DownForcer.TextScaled = true
+DownForcer.TextSize = 14.000
+DownForcer.TextWrapped = true
+
+UICorner_6.Parent = DownForcer
+
+DownForceText.Name = "DownForceText"
+DownForceText.Parent = ScrollingFrame
+DownForceText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DownForceText.BackgroundTransparency = 1.000
+DownForceText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DownForceText.BorderSizePixel = 0
+DownForceText.Position = UDim2.new(0.0480000004, 0, 0.209999993, 0)
+DownForceText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+DownForceText.Font = Enum.Font.SourceSans
+DownForceText.Text = "Down Force"
+DownForceText.TextColor3 = Color3.fromRGB(158, 158, 158)
+DownForceText.TextScaled = true
+DownForceText.TextSize = 14.000
+DownForceText.TextWrapped = true
+DownForceText.TextXAlignment = Enum.TextXAlignment.Left
+
+ActivateHotkeyText.Name = "ActivateHotkeyText"
+ActivateHotkeyText.Parent = ScrollingFrame
+ActivateHotkeyText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ActivateHotkeyText.BackgroundTransparency = 1.000
+ActivateHotkeyText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ActivateHotkeyText.BorderSizePixel = 0
+ActivateHotkeyText.Position = UDim2.new(0.0480000004, 0, 0.300000012, 0)
+ActivateHotkeyText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+ActivateHotkeyText.Font = Enum.Font.SourceSans
+ActivateHotkeyText.Text = "Activate Hotkey"
+ActivateHotkeyText.TextColor3 = Color3.fromRGB(158, 158, 158)
+ActivateHotkeyText.TextScaled = true
+ActivateHotkeyText.TextSize = 14.000
+ActivateHotkeyText.TextWrapped = true
+ActivateHotkeyText.TextXAlignment = Enum.TextXAlignment.Left
+
+ActivateHotkey.Name = "ActivateHotkey"
+ActivateHotkey.Parent = ScrollingFrame
+ActivateHotkey.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+ActivateHotkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ActivateHotkey.BorderSizePixel = 0
+ActivateHotkey.Position = UDim2.new(0.529999971, 0, 0.300000012, 0)
+ActivateHotkey.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+ActivateHotkey.Font = Enum.Font.SourceSans
+ActivateHotkey.Text = ""
+ActivateHotkey.TextColor3 = Color3.fromRGB(0, 0, 255)
+ActivateHotkey.TextScaled = true
+ActivateHotkey.TextSize = 14.000
+ActivateHotkey.TextWrapped = true
+
+UICorner_7.Parent = ActivateHotkey
+
+SlowdownHotkey.Name = "SlowdownHotkey"
+SlowdownHotkey.Parent = ScrollingFrame
+SlowdownHotkey.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+SlowdownHotkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SlowdownHotkey.BorderSizePixel = 0
+SlowdownHotkey.Position = UDim2.new(0.529999971, 0, 0.389999986, 0)
+SlowdownHotkey.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+SlowdownHotkey.Font = Enum.Font.SourceSans
+SlowdownHotkey.Text = ""
+SlowdownHotkey.TextColor3 = Color3.fromRGB(0, 0, 255)
+SlowdownHotkey.TextScaled = true
+SlowdownHotkey.TextSize = 14.000
+SlowdownHotkey.TextWrapped = true
+
+UICorner_8.Parent = SlowdownHotkey
+
+SlowdownHotkeyText.Name = "SlowdownHotkeyText"
+SlowdownHotkeyText.Parent = ScrollingFrame
+SlowdownHotkeyText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SlowdownHotkeyText.BackgroundTransparency = 1.000
+SlowdownHotkeyText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SlowdownHotkeyText.BorderSizePixel = 0
+SlowdownHotkeyText.Position = UDim2.new(0.0480000004, 0, 0.389999986, 0)
+SlowdownHotkeyText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+SlowdownHotkeyText.Font = Enum.Font.SourceSans
+SlowdownHotkeyText.Text = "Slowdown Hotkey"
+SlowdownHotkeyText.TextColor3 = Color3.fromRGB(158, 158, 158)
+SlowdownHotkeyText.TextScaled = true
+SlowdownHotkeyText.TextSize = 14.000
+SlowdownHotkeyText.TextWrapped = true
+SlowdownHotkeyText.TextXAlignment = Enum.TextXAlignment.Left
+
+AnchorHotkeyText.Name = "AnchorHotkeyText"
+AnchorHotkeyText.Parent = ScrollingFrame
+AnchorHotkeyText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AnchorHotkeyText.BackgroundTransparency = 1.000
+AnchorHotkeyText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AnchorHotkeyText.BorderSizePixel = 0
+AnchorHotkeyText.Position = UDim2.new(0.0480000004, 0, 0.479999989, 0)
+AnchorHotkeyText.Size = UDim2.new(0.44600001, 0, 0.0599999987, 0)
+AnchorHotkeyText.Font = Enum.Font.SourceSans
+AnchorHotkeyText.Text = "Anchor Hotkey"
+AnchorHotkeyText.TextColor3 = Color3.fromRGB(158, 158, 158)
+AnchorHotkeyText.TextScaled = true
+AnchorHotkeyText.TextSize = 14.000
+AnchorHotkeyText.TextWrapped = true
+AnchorHotkeyText.TextXAlignment = Enum.TextXAlignment.Left
+
+AnchorHotkey.Name = "AnchorHotkey"
+AnchorHotkey.Parent = ScrollingFrame
+AnchorHotkey.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+AnchorHotkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AnchorHotkey.BorderSizePixel = 0
+AnchorHotkey.Position = UDim2.new(0.529999971, 0, 0.479999989, 0)
+AnchorHotkey.Size = UDim2.new(0.381999999, 0, 0.0599999987, 0)
+AnchorHotkey.Font = Enum.Font.SourceSans
+AnchorHotkey.Text = ""
+AnchorHotkey.TextColor3 = Color3.fromRGB(0, 0, 255)
+AnchorHotkey.TextScaled = true
+AnchorHotkey.TextSize = 14.000
+AnchorHotkey.TextWrapped = true
+
+UICorner_9.Parent = AnchorHotkey
+
+ToggleGUIHotkey.Name = "ToggleGUIHotkey"
+ToggleGUIHotkey.Parent = ScrollingFrame
+ToggleGUIHotkey.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ToggleGUIHotkey.BackgroundTransparency = 1.000
+ToggleGUIHotkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToggleGUIHotkey.BorderSizePixel = 0
+ToggleGUIHotkey.Position = UDim2.new(0.0480000004, 0, 0.569999993, 0)
+ToggleGUIHotkey.Size = UDim2.new(0.879999995, 0, 0.0599999987, 0)
+ToggleGUIHotkey.Font = Enum.Font.SourceSans
+ToggleGUIHotkey.Text = "Ctrl + B to Toggle GUI"
+ToggleGUIHotkey.TextColor3 = Color3.fromRGB(255, 0, 0)
+ToggleGUIHotkey.TextScaled = true
+ToggleGUIHotkey.TextSize = 14.000
+ToggleGUIHotkey.TextWrapped = true
+
+-- Scripts:
+
+local function HIXT_fake_script() -- ToggleOnOff.ToggleOnOff 
+	local script = Instance.new('LocalScript', ToggleOnOff)
+
+	local toggleButton = script.Parent
+	local toggled = false
+
+	toggleButton.MouseButton1Click:Connect(function()
+		toggled = not toggled
+		if toggled then
+			toggleButton.Text = "On"
+			toggleButton.TextColor = BrickColor.new("Lime green")
+		elseif not toggled then
+			toggleButton.Text = "Off"
+			toggleButton.TextColor = BrickColor.new("Really red")
+		end
+	end)
+end
+coroutine.wrap(HIXT_fake_script)()
+local function LQECCDC_fake_script() -- Frame.MainScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local player = game.Players.LocalPlayer
+	local user = game:GetService("UserInputService")
+	local frame = script.Parent
+	local scrollingFrame = frame.ScrollingFrame
+	local forwardForcer = scrollingFrame.ForwardForcer
+	local upForcer = scrollingFrame.UpForcer
+	local downForcer = scrollingFrame.DownForcer
+	local activateHotkeyBox = scrollingFrame.ActivateHotkey
+	local slowdownHotkeyBox = scrollingFrame.SlowdownHotkey
+	local anchorHotkeyBox = scrollingFrame.AnchorHotkey
+	local toggleButton = script.Parent.ToggleOnOff
+	local activateHotkey
+	local slowdownHotkey
+	local anchorHotkey
+	local ctrlDown = false
+	local bDown = false
+
+
+	forwardForcer.Text = 50
+	upForcer.Text = 0
+	downForcer.Text = 0
+
+
+	activateHotkey = Enum.KeyCode.E
+	slowdownHotkey = Enum.KeyCode.Q
+	anchorHotkey = Enum.KeyCode.Three
+	activateHotkeyBox.Text = "E"
+	slowdownHotkeyBox.Text = "Q"
+	anchorHotkeyBox.Text = "3"
+
+
+	activateHotkeyBox.Changed:Connect(function() -- updates activate hotkey
+		if activateHotkeyBox and activateHotkeyBox.Text ~= "" then
+			local letter = string.upper(activateHotkeyBox.Text)
+			if activateHotkeyBox.Text >= "A" and activateHotkeyBox.Text <= "Z" then
+				activateHotkey = Enum.KeyCode[letter]
+				return
+			elseif activateHotkeyBox.Text >= "a" and activateHotkeyBox.Text <= "z" then
+				activateHotkey = Enum.KeyCode[letter]
+				return
+			elseif activateHotkeyBox.Text == "1" then
+				activateHotkey = Enum.KeyCode.One
+				return
+			elseif activateHotkeyBox.Text == "2" then
+				activateHotkey = Enum.KeyCode.Two
+				return
+			elseif activateHotkeyBox.Text == "3" then
+				activateHotkey = Enum.KeyCode.Three
+				return
+			elseif activateHotkeyBox.Text == "4" then
+				activateHotkey = Enum.KeyCode.Four
+				return
+			elseif activateHotkeyBox.Text == "5" then
+				activateHotkey = Enum.KeyCode.Five
+				return
+			elseif activateHotkeyBox.Text == "6" then
+				activateHotkey = Enum.KeyCode.Six
+				return
+			elseif activateHotkeyBox.Text == "7" then
+				activateHotkey = Enum.KeyCode.Seven
+				return
+			elseif activateHotkeyBox.Text == "8" then
+				activateHotkey = Enum.KeyCode.Nine
+				return
+			elseif activateHotkeyBox.Text == "9" then
+				activateHotkey = Enum.KeyCode.Nine
+				return
+			elseif activateHotkeyBox.Text == "0" then
+				activateHotkey = Enum.KeyCode.Zero
+				return
+			end
+		end
+	end)
+
+
+	slowdownHotkeyBox.Changed:Connect(function() -- updates slowdown hotkey
+		if slowdownHotkeyBox and slowdownHotkeyBox.Text ~= "" then
+			local letter = string.upper(slowdownHotkeyBox.Text)
+			if slowdownHotkeyBox.Text >= "A" and slowdownHotkeyBox.Text <= "Z" then
+				slowdownHotkey = Enum.KeyCode[letter]
+				return
+			elseif slowdownHotkeyBox.Text >= "a" and slowdownHotkeyBox.Text <= "z" then
+				slowdownHotkey = Enum.KeyCode[letter]
+				return
+			elseif slowdownHotkeyBox.Text == "1" then
+				slowdownHotkey = Enum.KeyCode.One
+				return
+			elseif slowdownHotkeyBox.Text == "2" then
+				slowdownHotkey = Enum.KeyCode.Two
+				return
+			elseif slowdownHotkeyBox.Text == "3" then
+				slowdownHotkey = Enum.KeyCode.Three
+				return
+			elseif slowdownHotkeyBox.Text == "4" then
+				slowdownHotkey = Enum.KeyCode.Four
+				return
+			elseif slowdownHotkeyBox.Text == "5" then
+				slowdownHotkey = Enum.KeyCode.Five
+				return
+			elseif slowdownHotkeyBox.Text == "6" then
+				slowdownHotkey = Enum.KeyCode.Six
+				return
+			elseif slowdownHotkeyBox.Text == "7" then
+				slowdownHotkey = Enum.KeyCode.Seven
+				return
+			elseif slowdownHotkeyBox.Text == "8" then
+				slowdownHotkey = Enum.KeyCode.Eight
+				return
+			elseif slowdownHotkeyBox.Text == "9" then
+				slowdownHotkey = Enum.KeyCode.Nine
+				return
+			elseif slowdownHotkeyBox.Text == "0" then
+				slowdownHotkey = Enum.KeyCode.Zero
+				return
+			end
+		end
+	end)
+
+
+	anchorHotkeyBox.Changed:Connect(function() -- updates anchor hotkey
+		if anchorHotkeyBox and anchorHotkeyBox.Text ~= "" then
+			local letter = string.upper(anchorHotkeyBox.Text)
+			if anchorHotkeyBox.Text >= "A" and anchorHotkeyBox.Text <= "Z" then
+				anchorHotkey = Enum.KeyCode[letter]
+				return
+			elseif anchorHotkeyBox.Text >= "a" and anchorHotkeyBox.Text <= "z" then
+				anchorHotkey = Enum.KeyCode[letter]
+				return
+			elseif anchorHotkeyBox.Text == "1" then
+				anchorHotkey = Enum.KeyCode.One
+				return
+			elseif anchorHotkeyBox.Text == "2" then
+				anchorHotkey = Enum.KeyCode.Two
+				return
+			elseif anchorHotkeyBox.Text == "3" then
+				anchorHotkey = Enum.KeyCode.Three
+				return
+			elseif anchorHotkeyBox.Text == "4" then
+				anchorHotkey = Enum.KeyCode.Four
+				return
+			elseif anchorHotkeyBox.Text == "5" then
+				anchorHotkey = Enum.KeyCode.Five
+				return
+			elseif anchorHotkeyBox.Text == "6" then
+				anchorHotkey = Enum.KeyCode.Six
+				return
+			elseif anchorHotkeyBox.Text == "7" then
+				anchorHotkey = Enum.KeyCode.Seven
+				return
+			elseif anchorHotkeyBox.Text == "8" then
+				anchorHotkey = Enum.KeyCode.Eight
+				return
+			elseif anchorHotkeyBox.Text == "9" then
+				anchorHotkey = Enum.KeyCode.Nine
+				return
+			elseif anchorHotkeyBox.Text == "0" then
+				anchorHotkey = Enum.KeyCode.Zero
+				return
+			end
+		end
+	end)
+
+	upForcer.Changed:Connect(function()
+		if upForcer.Text ~= "" then return end
+		task.wait(3)
+		if upForcer.Text == "" then upForcer.Text = 0 end
+	end)
+
+
+	downForcer.Changed:Connect(function()
+		if downForcer.Text ~= "" then return end
+		task.wait(3)
+		if downForcer.Text == "" then downForcer.Text = 0 end
+	end)
+
+
+	forwardForcer.Changed:Connect(function()
+		if forwardForcer.Text ~= "" then return end
+		task.wait(3)
+		if forwardForcer.Text == "" then forwardForcer.Text = 0 end
+	end)
+
+
+	user.InputBegan:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			ctrlDown = true
+		end
+	end)
+
+
+	user.InputEnded:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			ctrlDown = false
+		end
+	end)
+
+
+	user.InputBegan:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = true
+			if ctrlDown and bDown then
+				frame.Visible = not frame.Visible
+			end
+		end
+	end)
+
+
+	user.InputBegan:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = false
+		end
+	end)
+
+	user.InputBegan:Connect(function(key, typing)
+		if typing then return end
+		if toggleButton.Text == "Off" then return end
+		if activateHotkey and key.KeyCode == activateHotkey then -- if activate hotkey, then use forces.
+			local character = player.Character
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if character and humanoidRootPart then
+				if forwardForcer.Text ~= "" then
+					character["HumanoidRootPart"].Velocity += character["HumanoidRootPart"].CFrame.LookVector * Vector3.new(forwardForcer.Text, 0, forwardForcer.Text)
+				end
+				if upForcer.Text ~= "" and downForcer.Text ~= "" then
+					character["HumanoidRootPart"].Velocity += character["HumanoidRootPart"].CFrame.LookVector * Vector3.new(0,0,0) + Vector3.new(0, upForcer.Text - downForcer.Text, 0)
+				end
+			end
+		elseif slowdownHotkey and key.KeyCode == slowdownHotkey then -- elseif its not the activate hotkey, and its the slow hotkey, then slow down.
+			local character = player.Character
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if character and humanoidRootPart then
+				character["HumanoidRootPart"].Velocity -= character["HumanoidRootPart"].Velocity
+			end
+		elseif anchorHotkey and key.KeyCode == anchorHotkey then -- elseif not either, then anchor player.
+			local character = player.Character
+			local head = character:FindFirstChild("HumanoidRootPart")
+			if character and head then
+				character["HumanoidRootPart"].Anchored = not character["HumanoidRootPart"].Anchored
+			end
+		end
+	end)
+end
+coroutine.wrap(LQECCDC_fake_script)()
