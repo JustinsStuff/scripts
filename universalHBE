@@ -104,7 +104,7 @@ HumanoidRootPartSizer.BorderSizePixel = 0
 HumanoidRootPartSizer.Position = UDim2.new(0.518190444, 0, 0.402804971, 0)
 HumanoidRootPartSizer.Size = UDim2.new(0.462184876, 0, 0.200000003, 0)
 HumanoidRootPartSizer.Font = Enum.Font.SourceSans
-HumanoidRootPartSizer.Text = ""
+HumanoidRootPartSizer.Text = "5"
 HumanoidRootPartSizer.TextColor3 = Color3.fromRGB(0, 255, 0)
 HumanoidRootPartSizer.TextSize = 14.000
 
