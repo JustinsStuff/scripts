@@ -1,0 +1,365 @@
+-- read console for controls
+
+local Hit = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local HeadText = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local HumanoidRootPartText = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local TorsoText = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local HeadSizer = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local HumanoidRootPartSizer = Instance.new("TextBox")
+local UICorner_6 = Instance.new("UICorner")
+local TorsoSizer = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+Hit.Name = "Hit"
+Hit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Hit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Hit.ResetOnSpawn = false
+
+Frame.Parent = Hit
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.454285502, 0, 0.319402993, 0)
+Frame.Size = UDim2.new(0.137898892, 0, 0.317045838, 0)
+Frame.Draggable = true
+
+UICorner.Parent = Frame
+
+HeadText.Name = "HeadText"
+HeadText.Parent = Frame
+HeadText.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+HeadText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadText.BorderSizePixel = 0
+HeadText.Position = UDim2.new(0.0072662225, 0, 0.103568055, 0)
+HeadText.Size = UDim2.new(0.473109215, 0, 0.216666654, 0)
+HeadText.Font = Enum.Font.SourceSans
+HeadText.Text = "Head Size"
+HeadText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HeadText.TextScaled = true
+HeadText.TextSize = 14.000
+HeadText.TextWrapped = true
+
+UICorner_2.Parent = HeadText
+
+HumanoidRootPartText.Name = "HumanoidRootPartText"
+HumanoidRootPartText.Parent = Frame
+HumanoidRootPartText.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+HumanoidRootPartText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HumanoidRootPartText.BorderSizePixel = 0
+HumanoidRootPartText.Position = UDim2.new(0.0072662225, 0, 0.410497099, 0)
+HumanoidRootPartText.Size = UDim2.new(0.473109215, 0, 0.216666698, 0)
+HumanoidRootPartText.Font = Enum.Font.SourceSans
+HumanoidRootPartText.Text = "Humanoid Size"
+HumanoidRootPartText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HumanoidRootPartText.TextScaled = true
+HumanoidRootPartText.TextSize = 14.000
+HumanoidRootPartText.TextWrapped = true
+
+UICorner_3.Parent = HumanoidRootPartText
+
+TorsoText.Name = "TorsoText"
+TorsoText.Parent = Frame
+TorsoText.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+TorsoText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TorsoText.BorderSizePixel = 0
+TorsoText.Position = UDim2.new(0.0072662225, 0, 0.689096153, 0)
+TorsoText.Size = UDim2.new(0.473109215, 0, 0.216666698, 0)
+TorsoText.Font = Enum.Font.SourceSans
+TorsoText.Text = "Torso Size"
+TorsoText.TextColor3 = Color3.fromRGB(255, 255, 255)
+TorsoText.TextScaled = true
+TorsoText.TextSize = 14.000
+TorsoText.TextWrapped = true
+
+UICorner_4.Parent = TorsoText
+
+HeadSizer.Name = "HeadSizer"
+HeadSizer.Parent = Frame
+HeadSizer.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+HeadSizer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSizer.BorderSizePixel = 0
+HeadSizer.Position = UDim2.new(0.518190444, 0, 0.118952639, 0)
+HeadSizer.Size = UDim2.new(0.462184876, 0, 0.200000003, 0)
+HeadSizer.Font = Enum.Font.SourceSans
+HeadSizer.Text = ""
+HeadSizer.TextColor3 = Color3.fromRGB(0, 255, 0)
+HeadSizer.TextSize = 14.000
+
+UICorner_5.Parent = HeadSizer
+
+HumanoidRootPartSizer.Name = "HumanoidRootPartSizer"
+HumanoidRootPartSizer.Parent = Frame
+HumanoidRootPartSizer.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+HumanoidRootPartSizer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HumanoidRootPartSizer.BorderSizePixel = 0
+HumanoidRootPartSizer.Position = UDim2.new(0.518190444, 0, 0.402804971, 0)
+HumanoidRootPartSizer.Size = UDim2.new(0.462184876, 0, 0.200000003, 0)
+HumanoidRootPartSizer.Font = Enum.Font.SourceSans
+HumanoidRootPartSizer.Text = ""
+HumanoidRootPartSizer.TextColor3 = Color3.fromRGB(0, 255, 0)
+HumanoidRootPartSizer.TextSize = 14.000
+
+UICorner_6.Parent = HumanoidRootPartSizer
+
+TorsoSizer.Name = "TorsoSizer"
+TorsoSizer.Parent = Frame
+TorsoSizer.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+TorsoSizer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TorsoSizer.BorderSizePixel = 0
+TorsoSizer.Position = UDim2.new(0.518190444, 0, 0.696788251, 0)
+TorsoSizer.Size = UDim2.new(0.462184876, 0, 0.200000003, 0)
+TorsoSizer.Font = Enum.Font.SourceSans
+TorsoSizer.Text = ""
+TorsoSizer.TextColor3 = Color3.fromRGB(0, 255, 0)
+TorsoSizer.TextSize = 14.000
+
+UICorner_7.Parent = TorsoSizer
+
+-- Scripts:
+
+local function JTWGTIS_fake_script() -- Frame.Main 
+	local script = Instance.new('LocalScript', Frame)
+
+	local player = game.Players.LocalPlayer
+	local user = game:GetService("UserInputService")
+	local runService = game:GetService("RunService")
+	local frame = script.Parent
+	local headSizer = frame.HeadSizer
+	local humanoidRootPartSizer = frame.HumanoidRootPartSizer
+	local torsoSizer = frame.TorsoSizer
+	local controlDown = false
+	local eDown = false
+	local bDown = false
+	local hbeToggled = false
+	local OriginalSizes = {}
+	
+	print("ctrl + e to activate hbe")
+	print("ctrl + b to toggle gui")
+	
+	
+	local function SetVictimsSizesR6(victimsCharacter, victim)
+		local humanoidRootPart = victimsCharacter:FindFirstChild("HumanoidRootPart")
+		local head = victimsCharacter:FindFirstChild("Head")
+		local torso = victimsCharacter:FindFirstChild("Torso")
+		if humanoidRootPart then
+			if humanoidRootPartSizer.Text == "" then
+				if OriginalSizes[victim.Name]["HumanoidRootPart"] and OriginalSizes[victim.Name]["HumanoidRootPart"] ~= "" then
+					humanoidRootPart.Size = OriginalSizes[victim.Name]["HumanoidRootPart"]
+					humanoidRootPart.Transparency = 1
+				end
+			elseif humanoidRootPartSizer.Text ~= "" then
+				if victim and victim.Team then
+					humanoidRootPart.BrickColor = victim.TeamColor
+				else
+					humanoidRootPart.BrickColor = BrickColor.new("White")
+				end
+				humanoidRootPart.Material = Enum.Material.SmoothPlastic
+				humanoidRootPart.CanCollide = false
+				humanoidRootPart.Transparency = 0.65
+				humanoidRootPart.Size = Vector3.new(humanoidRootPartSizer.Text,humanoidRootPartSizer.Text,humanoidRootPartSizer.Text)
+			end
+		end
+		if head then
+			if headSizer.Text == "" then
+				if OriginalSizes[victim.Name]["Head"] and OriginalSizes[victim.Name]["Head"] ~= "" then
+					head.Size = OriginalSizes[victim.Name]["Head"]
+					head.Transparency = 0
+				end
+			elseif headSizer.Text ~= "" then
+				if victim and victim.Team then
+					head.BrickColor = victim.TeamColor
+				else
+					head.BrickColor = BrickColor.new("White")
+				end
+				head.CanCollide = false
+				head.Transparency = 0.65
+				head.Massless = true
+				head.Size = Vector3.new(headSizer.Text,headSizer.Text,headSizer.Text)
+			end
+		end
+		if torso then
+			if torsoSizer.Text == "" then
+				if OriginalSizes[victim.Name]["Torso"] and OriginalSizes[victim.Name]["Torso"] ~= "" then
+					torso.Size = OriginalSizes[victim.Name]["Torso"]
+					torso.Transparency = 0
+				end
+			elseif torsoSizer.Text ~= "" then
+				torso.CanCollide = false
+				torso.Transparency = 0.65
+				torso.Massless = true
+				torso.Size = Vector3.new(torsoSizer.Text,torsoSizer.Text,torsoSizer.Text)
+			end
+		end
+	end
+	
+	
+	local function SetVictimsSizesR15(victimsCharacter, victim)
+		local humanoidRootPart = victimsCharacter:FindFirstChild("HumanoidRootPart")
+		local head = victimsCharacter:FindFirstChild("Head")
+		local upperTorso = victimsCharacter:FindFirstChild("UpperTorso")
+		local lowerTorso = victimsCharacter:FindFirstChild("LowerTorso")
+		if humanoidRootPart then
+			if humanoidRootPartSizer.Text == "" then
+				if OriginalSizes[victim.Name]["HumanoidRootPart"] and OriginalSizes[victim.Name]["HumanoidRootPart"] ~= "" then
+					humanoidRootPart.Size = OriginalSizes[victim.Name]["HumanoidRootPart"]
+					humanoidRootPart.Transparency = 1
+				end
+			elseif humanoidRootPartSizer.Text ~= "" then
+				if victim and victim.Team then
+					humanoidRootPart.BrickColor = victim.TeamColor
+				else
+					humanoidRootPart.BrickColor = BrickColor.new("White")
+				end
+				humanoidRootPart.Material = Enum.Material.SmoothPlastic
+				humanoidRootPart.CanCollide = false
+				humanoidRootPart.Transparency = 0.65
+				humanoidRootPart.Size = Vector3.new(humanoidRootPartSizer.Text,humanoidRootPartSizer.Text,humanoidRootPartSizer.Text)
+			end
+		end
+		if head then
+			if headSizer.Text == "" then
+				if OriginalSizes[victim.Name]["Head"] and OriginalSizes[victim.Name]["Head"] ~= "" then
+					head.Size = OriginalSizes[victim.Name]["Head"]
+					head.Transparency = 0
+				end
+			elseif headSizer.Text ~= "" then
+				if victim and victim.Team then
+					head.BrickColor = victim.TeamColor
+				else
+					head.BrickColor = BrickColor.new("White")
+				end
+				head.CanCollide = false
+				head.Transparency = 0.65
+				head.Massless = true
+				head.Size = Vector3.new(headSizer.Text,headSizer.Text,headSizer.Text)
+			end
+		end
+		if upperTorso then
+			if torsoSizer.Text == "" then
+				if OriginalSizes[victim.Name]["UpperTorso"] and OriginalSizes[victim.Name]["UpperTorso"] ~= "" then
+					upperTorso.Size = OriginalSizes[victim.Name]["UpperTorso"]
+					upperTorso.Transparency = 0
+				end
+			elseif torsoSizer.Text ~= "" then
+				upperTorso.CanCollide = false
+				upperTorso.Transparency = 0.65
+				upperTorso.Massless = true
+				upperTorso.Size = Vector3.new(torsoSizer.Text,torsoSizer.Text,torsoSizer.Text)
+			end
+		end
+		if lowerTorso then
+			if torsoSizer.Text == "" then
+				if OriginalSizes[victim.Name]["LowerTorso"] and OriginalSizes[victim.Name]["LowerTorso"] ~= "" then
+					lowerTorso.Size = OriginalSizes[victim.Name]["LowerTorso"]
+					lowerTorso.Transparency = 0
+				end
+			elseif torsoSizer.Text ~= "" then
+				lowerTorso.CanCollide = false
+				lowerTorso.Transparency = 0.65
+				lowerTorso.Massless = true
+				lowerTorso.Size = Vector3.new(torsoSizer.Text,torsoSizer.Text,torsoSizer.Text)
+			end
+		end
+	end
+	
+	
+	user.InputBegan:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			controlDown = true
+		end
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = true
+		end
+		if key.KeyCode == Enum.KeyCode.E then
+			eDown = true
+			if controlDown and eDown then
+				hbeToggled = not hbeToggled
+				if not hbeToggled then
+					stepped:Disconnect()
+				end
+			end
+		end
+		if controlDown and bDown then
+			frame.Visible = not frame.Visible
+		end
+	end)
+	
+	stepped = runService.Stepped:Connect(function()
+		if hbeToggled then
+			for _, victim in pairs(game:GetService("Players"):GetPlayers()) do
+				if victim.Name == player.Name then continue end
+				if victim and victim.Character and victim.Character:FindFirstChild("Humanoid") and victim.Character:FindFirstChild("Humanoid").Health > 0 then
+					local victimsCharacter = victim.Character
+					if victimsCharacter.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+						if not OriginalSizes[victim.Name] then
+							OriginalSizes[victim.Name] = {}
+						end
+						if victimsCharacter:FindFirstChild("Head") then
+							if not OriginalSizes[victim.Name]["Head"] then
+								OriginalSizes[victim.Name]["Head"] = victimsCharacter:FindFirstChild("Head").Size
+							end
+						end
+						if victimsCharacter:FindFirstChild("HumanoidRootPart") then
+							if not OriginalSizes[victim.Name]["HumanoidRootPart"] then 
+								OriginalSizes[victim.Name]["HumanoidRootPart"] = victimsCharacter:FindFirstChild("HumanoidRootPart").Size
+							end
+						end
+						if victimsCharacter:FindFirstChild("Torso") then
+							if not OriginalSizes[victim.Name]["Torso"] then
+								OriginalSizes[victim.Name]["Torso"] = victimsCharacter:FindFirstChild("Torso").Size
+							end
+						end
+						SetVictimsSizesR6(victimsCharacter, victim)
+					elseif victimsCharacter.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+						if not OriginalSizes[victim.Name] then
+							OriginalSizes[victim.Name] = {}
+						end
+						if victimsCharacter:FindFirstChild("Head") then
+							if not OriginalSizes[victim.Name]["Head"] then
+								OriginalSizes[victim.Name]["Head"] = victimsCharacter:FindFirstChild("Head").Size
+							end
+						end
+						if victimsCharacter:FindFirstChild("HumanoidRootPart") then
+							if not OriginalSizes[victim.Name]["HumanoidRootPart"] then 
+								OriginalSizes[victim.Name]["HumanoidRootPart"] = victimsCharacter:FindFirstChild("HumanoidRootPart").Size
+							end
+						end
+						if victimsCharacter:FindFirstChild("UpperTorso") then
+							if not OriginalSizes[victim.Name]["UpperTorso"] then
+								OriginalSizes[victim.Name]["UpperTorso"] = victimsCharacter:FindFirstChild("UpperTorso").Size
+							end
+						end
+						if victimsCharacter:FindFirstChild("LowerTorso") then
+							if not OriginalSizes[victim.Name]["LowerTorso"] then
+								OriginalSizes[victim.Name]["LowerTorso"] = victimsCharacter:FindFirstChild("LowerTorso").Size
+							end
+						end
+						SetVictimsSizesR15(victimsCharacter, victim)
+					end
+				end
+			end
+		end
+	end)
+	
+	user.InputEnded:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			controlDown = false
+		end
+		if key.KeyCode == Enum.KeyCode.E then
+			eDown = false
+		end
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = false
+		end
+	end)
+end
+coroutine.wrap(JTWGTIS_fake_script)()
