@@ -22,10 +22,11 @@ local HitboxColorGreen = Instance.new("TextBox")
 local TitleFrame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 
+-- version: 2
 --Properties:
 
 MenuUI.Name = "MenuUI"
-MenuUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MenuUI.Parent = game:GetService("CoreGui")
 MenuUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 MenuUI.ResetOnSpawn = false
 
@@ -337,7 +338,7 @@ local function PGMSFYQ_fake_script() -- MainGUI.Main
 	local vampireCheck = hitboxTabScroll.VampireCheck
 	local hitboxToggle = hitboxTabScroll.HitboxToggle
 	-- hbe script stuff
-	local me = game.Players.LocalPlayer
+	local me = game:GetService("Players").LocalPlayer
 	local runService = game:GetService("RunService")
 	local user = game:GetService("UserInputService")
 	local toggled = false
