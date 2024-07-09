@@ -1,0 +1,602 @@
+local MenuUI = Instance.new("ScreenGui")
+local MainGUI = Instance.new("Frame")
+local ButtonsFrame = Instance.new("Frame")
+local HitboxTab = Instance.new("TextButton")
+local AutoEscapeTab = Instance.new("TextButton")
+local ESPTab = Instance.new("TextButton")
+local TabFrame = Instance.new("Frame")
+local HitboxTab_2 = Instance.new("Frame")
+local HitboxTabScroll = Instance.new("ScrollingFrame")
+local HitboxTransparencyText = Instance.new("TextLabel")
+local HitboxSizer = Instance.new("TextBox")
+local HitboxTransparency = Instance.new("TextBox")
+local HitboxSizeText = Instance.new("TextLabel")
+local HitboxColorRed = Instance.new("TextBox")
+local HitboxColorText = Instance.new("TextLabel")
+local VampireCheckText = Instance.new("TextLabel")
+local VampireCheck = Instance.new("TextButton")
+local HitboxToggleText = Instance.new("TextLabel")
+local HitboxToggle = Instance.new("TextButton")
+local HitboxColorBlue = Instance.new("TextBox")
+local HitboxColorGreen = Instance.new("TextBox")
+local TitleFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+
+--Properties:
+
+MenuUI.Name = "MenuUI"
+MenuUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MenuUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+MenuUI.ResetOnSpawn = false
+
+MainGUI.Name = "MainGUI"
+MainGUI.Parent = MenuUI
+MainGUI.Active = true
+MainGUI.Draggable = true
+MainGUI.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainGUI.BorderSizePixel = 0
+MainGUI.Position = UDim2.new(0.404809624, 0, 0.164179102, 0)
+MainGUI.Size = UDim2.new(0.200000006, 0, 0.3, 0)
+
+ButtonsFrame.Name = "ButtonsFrame"
+ButtonsFrame.Parent = MainGUI
+ButtonsFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ButtonsFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ButtonsFrame.BorderSizePixel = 0
+ButtonsFrame.Position = UDim2.new(0.0242424235, 0, 0.125506073, 0)
+ButtonsFrame.Size = UDim2.new(0.345454544, 0, 0.846153855, 0)
+
+HitboxTab.Name = "HitboxTab"
+HitboxTab.Parent = ButtonsFrame
+HitboxTab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxTab.BorderSizePixel = 0
+HitboxTab.Position = UDim2.new(0.149122804, 0, 0.0717703328, 0)
+HitboxTab.Size = UDim2.new(0.711000025, 0, 0.119999997, 0)
+HitboxTab.Font = Enum.Font.SourceSans
+HitboxTab.Text = "Hitbox"
+HitboxTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxTab.TextScaled = true
+HitboxTab.TextSize = 1.000
+HitboxTab.TextWrapped = true
+
+AutoEscapeTab.Name = "AutoEscapeTab"
+AutoEscapeTab.Parent = ButtonsFrame
+AutoEscapeTab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+AutoEscapeTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoEscapeTab.BorderSizePixel = 0
+AutoEscapeTab.Position = UDim2.new(0.140000001, 0, 0.192000002, 0)
+AutoEscapeTab.Size = UDim2.new(0.711000025, 0, 0.119999997, 0)
+AutoEscapeTab.Font = Enum.Font.SourceSans
+AutoEscapeTab.Text = "Auto Escape"
+AutoEscapeTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoEscapeTab.TextScaled = true
+AutoEscapeTab.TextSize = 1.000
+AutoEscapeTab.TextWrapped = true
+
+ESPTab.Name = "ESPTab"
+ESPTab.Parent = ButtonsFrame
+ESPTab.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ESPTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ESPTab.BorderSizePixel = 0
+ESPTab.Position = UDim2.new(0.140000001, 0, 0.312999994, 0)
+ESPTab.Size = UDim2.new(0.711000025, 0, 0.119999997, 0)
+ESPTab.Font = Enum.Font.SourceSans
+ESPTab.Text = "ESP"
+ESPTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPTab.TextScaled = true
+ESPTab.TextSize = 1.000
+ESPTab.TextWrapped = true
+
+TabFrame.Name = "TabFrame"
+TabFrame.Parent = MainGUI
+TabFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TabFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TabFrame.BorderSizePixel = 0
+TabFrame.Position = UDim2.new(0.369696796, 0, 0.146422043, 0)
+TabFrame.Size = UDim2.new(0.554225326, 0, 0.780034065, 0)
+
+HitboxTab_2.Name = "HitboxTab"
+HitboxTab_2.Parent = TabFrame
+HitboxTab_2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxTab_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+HitboxTab_2.BorderSizePixel = 0
+HitboxTab_2.Size = UDim2.new(0.99494952, 0, 0.995215297, 0)
+
+HitboxTabScroll.Name = "HitboxTabScroll"
+HitboxTabScroll.Parent = HitboxTab_2
+HitboxTabScroll.Active = true
+HitboxTabScroll.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxTabScroll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxTabScroll.BorderSizePixel = 0
+HitboxTabScroll.Size = UDim2.new(1, 0, 1, 0)
+
+HitboxTransparencyText.Name = "HitboxTransparencyText"
+HitboxTransparencyText.Parent = HitboxTabScroll
+HitboxTransparencyText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxTransparencyText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxTransparencyText.BorderSizePixel = 0
+HitboxTransparencyText.Position = UDim2.new(0.0507614203, 0, 0.133000001, 0)
+HitboxTransparencyText.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxTransparencyText.Font = Enum.Font.SourceSans
+HitboxTransparencyText.Text = "Transparency"
+HitboxTransparencyText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxTransparencyText.TextScaled = true
+HitboxTransparencyText.TextSize = 14.000
+HitboxTransparencyText.TextWrapped = true
+HitboxTransparencyText.TextXAlignment = Enum.TextXAlignment.Left
+
+HitboxSizer.Name = "HitboxSizer"
+HitboxSizer.Parent = HitboxTabScroll
+HitboxSizer.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxSizer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxSizer.BorderSizePixel = 0
+HitboxSizer.Position = UDim2.new(0.485000014, 0, 0.0432692319, 0)
+HitboxSizer.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxSizer.Font = Enum.Font.SourceSans
+HitboxSizer.Text = ""
+HitboxSizer.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxSizer.TextScaled = true
+HitboxSizer.TextSize = 14.000
+HitboxSizer.TextWrapped = true
+
+HitboxTransparency.Name = "HitboxTransparency"
+HitboxTransparency.Parent = HitboxTabScroll
+HitboxTransparency.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxTransparency.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxTransparency.BorderSizePixel = 0
+HitboxTransparency.Position = UDim2.new(0.485000014, 0, 0.133000001, 0)
+HitboxTransparency.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxTransparency.Font = Enum.Font.SourceSans
+HitboxTransparency.PlaceholderText = "0-1"
+HitboxTransparency.Text = ""
+HitboxTransparency.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxTransparency.TextScaled = true
+HitboxTransparency.TextSize = 14.000
+HitboxTransparency.TextWrapped = true
+
+HitboxSizeText.Name = "HitboxSizeText"
+HitboxSizeText.Parent = HitboxTabScroll
+HitboxSizeText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxSizeText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxSizeText.BorderSizePixel = 0
+HitboxSizeText.Position = UDim2.new(0.0507614203, 0, 0.0430000015, 0)
+HitboxSizeText.Size = UDim2.new(0.355329961, 0, 0.072115384, 0)
+HitboxSizeText.Font = Enum.Font.SourceSans
+HitboxSizeText.Text = "Hitbox Size"
+HitboxSizeText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxSizeText.TextScaled = true
+HitboxSizeText.TextSize = 14.000
+HitboxSizeText.TextWrapped = true
+HitboxSizeText.TextXAlignment = Enum.TextXAlignment.Left
+
+HitboxColorRed.Name = "HitboxColorRed"
+HitboxColorRed.Parent = HitboxTabScroll
+HitboxColorRed.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxColorRed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxColorRed.BorderSizePixel = 0
+HitboxColorRed.Position = UDim2.new(0.485000014, 0, 0.223000005, 0)
+HitboxColorRed.Size = UDim2.new(0.115000002, 0, 0.0719999969, 0)
+HitboxColorRed.Font = Enum.Font.SourceSans
+HitboxColorRed.PlaceholderColor3 = Color3.fromRGB(255, 0, 0)
+HitboxColorRed.PlaceholderText = "R"
+HitboxColorRed.Text = ""
+HitboxColorRed.TextColor3 = Color3.fromRGB(255, 0, 0)
+HitboxColorRed.TextScaled = true
+HitboxColorRed.TextSize = 14.000
+HitboxColorRed.TextWrapped = true
+
+HitboxColorText.Name = "HitboxColorText"
+HitboxColorText.Parent = HitboxTabScroll
+HitboxColorText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxColorText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxColorText.BorderSizePixel = 0
+HitboxColorText.Position = UDim2.new(0.0507614203, 0, 0.223000005, 0)
+HitboxColorText.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxColorText.Font = Enum.Font.SourceSans
+HitboxColorText.Text = "Color"
+HitboxColorText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxColorText.TextScaled = true
+HitboxColorText.TextSize = 14.000
+HitboxColorText.TextWrapped = true
+HitboxColorText.TextXAlignment = Enum.TextXAlignment.Left
+
+VampireCheckText.Name = "VampireCheckText"
+VampireCheckText.Parent = HitboxTabScroll
+VampireCheckText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+VampireCheckText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+VampireCheckText.BorderSizePixel = 0
+VampireCheckText.Position = UDim2.new(0.0507614203, 0, 0.312999994, 0)
+VampireCheckText.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+VampireCheckText.Font = Enum.Font.SourceSans
+VampireCheckText.Text = "Vamp Check"
+VampireCheckText.TextColor3 = Color3.fromRGB(255, 255, 255)
+VampireCheckText.TextScaled = true
+VampireCheckText.TextSize = 14.000
+VampireCheckText.TextWrapped = true
+VampireCheckText.TextXAlignment = Enum.TextXAlignment.Left
+
+VampireCheck.Name = "VampireCheck"
+VampireCheck.Parent = HitboxTabScroll
+VampireCheck.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+VampireCheck.BorderColor3 = Color3.fromRGB(0, 0, 0)
+VampireCheck.BorderSizePixel = 0
+VampireCheck.Position = UDim2.new(0.485000014, 0, 0.312999994, 0)
+VampireCheck.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+VampireCheck.Font = Enum.Font.SourceSans
+VampireCheck.Text = "OFF"
+VampireCheck.TextColor3 = Color3.fromRGB(255, 0, 0)
+VampireCheck.TextScaled = true
+VampireCheck.TextSize = 14.000
+VampireCheck.TextWrapped = true
+
+HitboxToggleText.Name = "HitboxToggleText"
+HitboxToggleText.Parent = HitboxTabScroll
+HitboxToggleText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HitboxToggleText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxToggleText.BorderSizePixel = 0
+HitboxToggleText.Position = UDim2.new(0.0507614203, 0, 0.382999986, 0)
+HitboxToggleText.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxToggleText.Font = Enum.Font.SourceSans
+HitboxToggleText.Text = "HBE Toggle"
+HitboxToggleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+HitboxToggleText.TextScaled = true
+HitboxToggleText.TextSize = 14.000
+HitboxToggleText.TextWrapped = true
+HitboxToggleText.TextXAlignment = Enum.TextXAlignment.Left
+
+HitboxToggle.Name = "HitboxToggle"
+HitboxToggle.Parent = HitboxTabScroll
+HitboxToggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxToggle.BorderSizePixel = 0
+HitboxToggle.Position = UDim2.new(0.485000014, 0, 0.382999986, 0)
+HitboxToggle.Size = UDim2.new(0.406091362, 0, 0.072115384, 0)
+HitboxToggle.Font = Enum.Font.SourceSans
+HitboxToggle.Text = "OFF"
+HitboxToggle.TextColor3 = Color3.fromRGB(255, 0, 0)
+HitboxToggle.TextScaled = true
+HitboxToggle.TextSize = 14.000
+HitboxToggle.TextWrapped = true
+
+HitboxColorBlue.Name = "HitboxColorBlue"
+HitboxColorBlue.Parent = HitboxTabScroll
+HitboxColorBlue.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxColorBlue.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxColorBlue.BorderSizePixel = 0
+HitboxColorBlue.Position = UDim2.new(0.779999971, 0, 0.223000005, 0)
+HitboxColorBlue.Size = UDim2.new(0.115000002, 0, 0.0719999969, 0)
+HitboxColorBlue.Font = Enum.Font.SourceSans
+HitboxColorBlue.PlaceholderColor3 = Color3.fromRGB(0, 0, 255)
+HitboxColorBlue.PlaceholderText = "B"
+HitboxColorBlue.Text = ""
+HitboxColorBlue.TextColor3 = Color3.fromRGB(0, 0, 255)
+HitboxColorBlue.TextScaled = true
+HitboxColorBlue.TextSize = 14.000
+HitboxColorBlue.TextWrapped = true
+
+HitboxColorGreen.Name = "HitboxColorGreen"
+HitboxColorGreen.Parent = HitboxTabScroll
+HitboxColorGreen.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+HitboxColorGreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HitboxColorGreen.BorderSizePixel = 0
+HitboxColorGreen.Position = UDim2.new(0.629999995, 0, 0.223000005, 0)
+HitboxColorGreen.Size = UDim2.new(0.115000002, 0, 0.0719999969, 0)
+HitboxColorGreen.Font = Enum.Font.SourceSans
+HitboxColorGreen.PlaceholderColor3 = Color3.fromRGB(0, 255, 0)
+HitboxColorGreen.PlaceholderText = "G"
+HitboxColorGreen.Text = ""
+HitboxColorGreen.TextColor3 = Color3.fromRGB(0, 255, 0)
+HitboxColorGreen.TextScaled = true
+HitboxColorGreen.TextSize = 14.000
+HitboxColorGreen.TextWrapped = true
+
+TitleFrame.Name = "TitleFrame"
+TitleFrame.Parent = MainGUI
+TitleFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TitleFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TitleFrame.BorderSizePixel = 0
+TitleFrame.Size = UDim2.new(1, 0, 0.125506073, 0)
+
+Title.Name = "Title"
+Title.Parent = TitleFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0757574961, 0, 0, 0)
+Title.Size = UDim2.new(0.462576479, 0, 0.99999994, 0)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Vampire Hunters 2 Remake"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Scripts:
+
+local function PGMSFYQ_fake_script() -- MainGUI.Main 
+	local script = Instance.new('LocalScript', MainGUI)
+
+	-- gui stuff
+	local MainGUI = script.Parent
+	local buttonsFrame = MainGUI.ButtonsFrame
+	local tabFrame = MainGUI.TabFrame
+	local titleFrame = MainGUI.TitleFrame
+	local espTab = buttonsFrame.ESPTab
+	local hitboxTab = tabFrame.HitboxTab
+	local autoEscapeTab = buttonsFrame.AutoEscapeTab
+	local hitboxTabScroll = hitboxTab.HitboxTabScroll
+	local hitboxSizer = hitboxTabScroll.HitboxSizer
+	local hitboxTransparency = hitboxTabScroll.HitboxTransparency
+	local hitboxColorRed = hitboxTabScroll.HitboxColorRed
+	local hitboxColorGreen = hitboxTabScroll.HitboxColorGreen
+	local hitboxColorBlue = hitboxTabScroll.HitboxColorBlue
+	local vampireCheck = hitboxTabScroll.VampireCheck
+	local hitboxToggle = hitboxTabScroll.HitboxToggle
+	-- hbe script stuff
+	local me = game.Players.LocalPlayer
+	local runService = game:GetService("RunService")
+	local user = game:GetService("UserInputService")
+	local toggled = false
+	local vampToggled = false
+	local controlDown = false
+	local eDown = false
+	local bDown = false
+	local stepped
+	local originalSize = Vector3.new(2, 2, 1)
+	local originalSizeR15 = Vector3.new(2, 1.6000003814697266, 1)
+	local debris = game:GetService("Debris")
+	
+	
+	vampireCheck.MouseButton1Click:Connect(function()
+		vampToggled = not vampToggled
+		if vampToggled then
+			vampireCheck.Text = "ON"
+			vampireCheck.TextColor = BrickColor.new("Lime green")
+		elseif not vampToggled then
+			vampireCheck.Text = "OFF"
+			vampireCheck.TextColor = BrickColor.new("Really red")
+		end
+	end)
+	
+	hitboxToggle.MouseButton1Click:Connect(function()
+		toggled = not toggled
+		if toggled then
+			hitboxToggle.Text = "ON"
+			hitboxToggle.TextColor = BrickColor.new("Lime green")
+		elseif not toggled then
+			hitboxToggle.Text = "OFF"
+			hitboxToggle.TextColor = BrickColor.new("Really red")
+		end
+	end)
+	
+	
+	local function RemoveHBE(character)
+	if character and character:FindFirstChild("Humanoid") and character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+		local rootPart = character:FindFirstChild("12")
+		if rootPart then
+			local torso = character:FindFirstChild("Torso")
+			if torso then
+				rootPart.Size = originalSize
+				rootPart.Name = "Torso"
+				debris:AddItem(torso, 0)
+				rootPart.CanCollide = true
+				rootPart.Massless = false
+				rootPart.Transparency = 0
+				rootPart.Color = character:FindFirstChild("Head").Color
+			end
+		end
+	elseif character and character:FindFirstChild("Humanoid") and character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+		local rootPart = character:FindFirstChild("12")
+		if rootPart then
+			local torso = character:FindFirstChild("UpperTorso")
+			if torso then
+				rootPart.Size = originalSize
+				rootPart.Name = "UpperTorso"
+				debris:AddItem(torso, 0)
+				rootPart.CanCollide = true
+				rootPart.Massless = false
+				rootPart.Transparency = 0
+				rootPart.Color = character:FindFirstChild("Head").Color
+			end
+		end
+	end
+end
+	
+	local function SetHBE(character)
+	if character and character:FindFirstChild("Humanoid") and character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+		if vampToggled then
+			if character:FindFirstChild("charvalues") then
+				local charvalues = character:FindFirstChild("charvalues")
+				if charvalues:FindFirstChild("vampire") then
+					local vampire = charvalues:FindFirstChild("vampire")
+					if vampire.Value == false then
+						local characterL = character
+						RemoveHBE(characterL)
+					elseif vampire.Value == true then
+						local torso = character:FindFirstChild("Torso") -- sets hbe for the torso
+						if torso and not character:FindFirstChild("12") then
+							local clonedTorso = torso:Clone()
+							clonedTorso.Parent = character
+							clonedTorso.CanQuery = false
+							torso.Name = "12"
+							torso.CanCollide = false
+							torso.Massless = true
+							if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+								character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+							end
+							torso.Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+							torso.Material = Enum.Material.SmoothPlastic
+						end
+						if torso and character:FindFirstChild("12") then
+							if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+								character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+							end
+							character:FindFirstChild("12").Color = Color3.new(hitboxColorRed.Text, hitboxColorGreen.Text, hitboxColorBlue.Text)
+							character:FindFirstChild("12").CanCollide = false
+							character:FindFirstChild("12").Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+							character:FindFirstChild("12").Massless = true
+						end
+					end
+				end
+			end
+		elseif not vampToggled then
+		-- hello this is the default set hbe
+			local torso = character:FindFirstChild("Torso") -- sets hbe for the torso
+			if torso and not character:FindFirstChild("12") then
+				local clonedTorso = torso:Clone()
+				clonedTorso.Parent = character
+				clonedTorso.CanQuery = false
+				torso.Name = "12"
+				torso.CanCollide = false
+				torso.Massless = true
+				if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+					character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+				end
+				torso.Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+				torso.Material = Enum.Material.SmoothPlastic
+			end
+			if torso and character:FindFirstChild("12") then
+				if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+					character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+				end
+				character:FindFirstChild("12").Color = Color3.new(hitboxColorRed.Text, hitboxColorGreen.Text, hitboxColorBlue.Text)
+				character:FindFirstChild("12").CanCollide = false
+				character:FindFirstChild("12").Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+				character:FindFirstChild("12").Massless = true
+			end
+		end
+elseif character and character:FindFirstChild("Humanoid") and character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+		if vampToggled then
+			if character:FindFirstChild("charvalues") then
+				local charvalues = character:FindFirstChild("charvalues")
+				if charvalues:FindFirstChild("vampire") then
+					local vampire = charvalues:FindFirstChild("vampire")
+					if vampire.Value == false then
+						local characterL = character
+						RemoveHBE(characterL)
+					elseif vampire.Value == true then
+						local torso = character:FindFirstChild("UpperTorso") -- sets hbe for the torso
+						if torso and not character:FindFirstChild("12") then
+							local clonedTorso = torso:Clone()
+							clonedTorso.Parent = character
+							clonedTorso.CanQuery = false
+							torso.Name = "12"
+							torso.CanCollide = false
+							torso.Massless = true
+							if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+								character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+							end
+							torso.Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+							torso.Material = Enum.Material.SmoothPlastic
+						end
+						if torso and character:FindFirstChild("12") then
+							if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+								character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+							end
+							character:FindFirstChild("12").Color = Color3.new(hitboxColorRed.Text, hitboxColorGreen.Text, hitboxColorBlue.Text)
+							character:FindFirstChild("12").CanCollide = false
+							character:FindFirstChild("12").Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+							character:FindFirstChild("12").Massless = true
+						end
+					end
+				end
+			end
+		elseif not vampToggled then
+		-- hello this is the r15 set hbe
+			local torso = character:FindFirstChild("UpperTorso") -- sets hbe for the torso
+			if torso and not character:FindFirstChild("12") then
+				local clonedTorso = torso:Clone()
+				clonedTorso.Parent = character
+				clonedTorso.CanQuery = false
+				torso.Name = "12"
+				torso.CanCollide = false
+				torso.Massless = true
+				if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+					character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+				end
+				torso.Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+				torso.Material = Enum.Material.SmoothPlastic
+			end
+			if torso and character:FindFirstChild("12") then
+				if hitboxTransparency.Text and hitboxTransparency.Text ~= "" then
+					character:FindFirstChild("12").Transparency = hitboxTransparency.Text
+				end
+				character:FindFirstChild("12").Color = Color3.new(hitboxColorRed.Text, hitboxColorGreen.Text, hitboxColorBlue.Text)
+				character:FindFirstChild("12").CanCollide = false
+				character:FindFirstChild("12").Size = Vector3.new(hitboxSizer.Text,hitboxSizer.Text,hitboxSizer.Text)
+				character:FindFirstChild("12").Massless = true
+			end
+		end
+	end
+end
+		
+	
+	runService.Stepped:Connect(function()
+		for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+			if player.Name == me.Name then continue end
+			if player.Character then
+				if hitboxSizer.Text ~= "" then
+					if toggled then
+						if hitboxToggle.Text == "OFF" and hitboxToggle.TextColor == BrickColor.new("Really red") then
+							hitboxToggle.Text = "ON"
+							hitboxToggle.TextColor = BrickColor.new("Lime green")
+						end
+						SetHBE(player.Character)
+					else
+						if hitboxToggle.Text == "ON" and hitboxToggle.TextColor == BrickColor.new("Lime green") then
+							hitboxToggle.Text = "OFF"
+							hitboxToggle.TextColor = BrickColor.new("Really red")
+						end
+						RemoveHBE(player.Character)
+					end
+				end
+			end
+		end
+	end)
+	
+	user.InputBegan:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			controlDown = true
+		end
+		if key.KeyCode == Enum.KeyCode.E then
+			eDown = true
+			if controlDown and eDown then
+				toggled = not toggled
+				if toggled then
+					if hitboxToggle.Text == "OFF" and hitboxToggle.TextColor == BrickColor.new("Really red") then
+						hitboxToggle.Text = "ON"
+						hitboxToggle.TextColor = BrickColor.new("Lime green")
+					end
+				else
+					if hitboxToggle.Text == "ON" and hitboxToggle.TextColor == BrickColor.new("Lime green") then
+						hitboxToggle.Text = "OFF"
+						hitboxToggle.TextColor = BrickColor.new("Really red")
+					end
+				end
+			end
+		end
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = true
+			if controlDown and bDown then
+				MainGUI.Visible = not MainGUI.Visible
+			end
+		end
+	end)
+	
+	user.InputEnded:Connect(function(key, typing)
+		if key.KeyCode == Enum.KeyCode.LeftControl then
+			controlDown = false
+		end
+		if key.KeyCode == Enum.KeyCode.E then
+			eDown = false
+		end
+		if key.KeyCode == Enum.KeyCode.B then
+			bDown = false
+		end
+	end)
+end
+coroutine.wrap(PGMSFYQ_fake_script)()
